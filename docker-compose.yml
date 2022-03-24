@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   db:
+    image: divinirakiza/meterm-front:latest
     build: 
       context: backend
       dockerfile: db.Dockerfile 
@@ -9,12 +10,14 @@ services:
        - '27017:27017'
     restart: always
   backend:
+    image: divinirakiza/meterm-back:latest
     build:
       context: backend
       dockerfile: Dockerfile
     ports: 
        - '4008:4008'
   frontend:
+    image: divinirakiza/meterm-db:latest
     build: 
       context: frontend
       dockerfile: Dockerfile 
