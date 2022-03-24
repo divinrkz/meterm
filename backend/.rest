@@ -1,0 +1,8 @@
+###
+POST http://172.20.2.18:4008/api/tokens/purchase
+Content-Type: application/json
+
+{
+    "meterNumber": 893431,
+    "amount": 100
+}

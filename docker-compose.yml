@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    build: 
+      context: backend
+      dockerfile: db.Dockerfile 
+    ports:
+       - '27017:27017'
+    restart: always
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports: 
+       - '4008:4008'
+  frontend:
+    build: 
+      context: frontend
+      dockerfile: Dockerfile 
+    ports:
+       - '80:80'
+volumes:
+  db:
+
